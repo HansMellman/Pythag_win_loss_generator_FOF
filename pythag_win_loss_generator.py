@@ -19,12 +19,6 @@ df_original = pd.read_csv(base_path / selected_league / "standings.csv")
 input_year = int(
     inquirer.number(message="Please enter the year you want to generate for:").execute()
 )
-# calculation for expected wins using PF & PA stored in new variable.
-exp_wins = (
-    (df_original["Points_Scored"] ** 2.37)
-    / (df_original["Points_Scored"] ** 2.37 + df_original["Points_Allowed"] ** 2.37)
-    * 16
-)
 
 # chaining - Pandas concept (read more) - create new dataframe by altering old dataframe
 df_new = (
@@ -47,7 +41,7 @@ df_new = (
     )
     # set desired year for dataset via input from user.
     .loc[lambda df: df.Year == input_year]
-    # attempt to create a new column showing the expected wins as calculated by the PF and PA columns in df.
+    # calculation for expected wins using PF & PA stored in new variable/applied to df.
     .assign(
         Exp_Wins=lambda df: (
             (

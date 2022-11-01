@@ -10,28 +10,7 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\Pythag_dataset_2059_amended.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="\pythag_record_Imperial_2059.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\standings.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\team_codes.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

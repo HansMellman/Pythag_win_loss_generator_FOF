@@ -47,14 +47,14 @@ df_new = (
             (
                 (df["Points_Scored"] ** 2.37)
                 / (df["Points_Scored"] ** 2.37 + df["Points_Allowed"] ** 2.37)
-                * df["Wins"]
-                + df["Losses"]
+                * (df["Wins"] + df["Losses"])
+
             )
             .round(0)
             .astype(int)
         )
     ).assign(
-        Exp_Losses=lambda df: df["Wins"] + df["Losses"] - df.Exp_Wins  # calculate expected losses
+        Exp_Losses=lambda df: (df["Wins"] + df["Losses"]) - df.Exp_Wins  # calculate expected losses
     )
 )
 # Reorder the columns as desired.
